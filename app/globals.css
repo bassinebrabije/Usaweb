@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+
+
+/* ...existing code... */
+:root {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+/* ...existing code... */
+body {
+  font-family: var(--font-poppins), sans-serif;
+}

@@ -1,0 +1,114 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const steps = [
+    { title: "SELF-DISCOVERY", videoUrl: "https://www.youtube.com/embed/LmnluYPT4e8?controls=1" },
+    { title: "CAREER PATH CLARITY", videoUrl: "https://www.youtube.com/embed/LmnluYPT4e8?controls=1" },
+    { title: "POWER POSITIONIN", videoUrl: "https://www.youtube.com/embed/LmnluYPT4e8?controls=1" },
+    { title: "CAREER SUCCESS TOOLS", videoUrl: "https://www.youtube.com/embed/LmnluYPT4e8?controls=1" },
+    { title: "EFFECTIVE CAREER STRATEGIES", videoUrl: "https://www.youtube.com/embed/LmnluYPT4e8?controls=1" },
+    { title: "SUCCESSFUL TRANSITION", videoUrl: "https://www.youtube.com/embed/LmnluYPT4e8?controls=1" },
+];
+
+export default function How() {
+    const [open, setOpen] = useState(false);
+    const [activeStep, setActiveStep] = useState<number | null>(null);
+
+    const handleOpen = (idx: number) => {
+        setActiveStep(idx);
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+        setActiveStep(null);
+    };
+
+    return (
+        <div className="pb-20">
+            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div className="mb-16 text-center">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7 }}
+                        className="mb-4 text-2xl font-bold tracking-tight sm:leading-16 text-gray-800 sm:text-4xl lg:text-5xl"
+                    >
+                        How "Unlock Your Dream Career" <br /> program can help :
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                        className="max-w-3xl mx-auto text-lg leading-relaxed text-gray-900 sm:text-xl"
+                    >
+                        The program is based on a 6-step method used by high-achieving executives to define, plan, and attract their next career opportunities.
+                    </motion.p>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                        className="max-w-3xl mx-auto text-lg leading-relaxed text-gray-900 sm:text-xl pt-3.5"
+                    >
+                        Get seen and recognized as an impact-driving thought leader, while earning 20% more.
+                    </motion.p>
+                </div>
+                <div className="grid gap-8 md:grid-cols-3 lg:gap-12 bor">
+                    {steps.map((step, idx) => (
+                        <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7, delay: 0.3 + idx * 0.1 }}
+                            className="p-8 transition-transform duration-300 bg-white rounded-xl  border-2 border-red-100  hover:scale-110 cursor-pointer"
+                            onClick={() => handleOpen(idx)}
+                        >
+                            <div className="flex items-center justify-center w-16 h-16 mb-6 text-red-500 bg-red-100 rounded-full">
+                                <span className="text-3xl font-bold">{idx + 1}</span>
+                            </div>
+                            <h3 className="mb-3 text-xl font-semibold text-gray-800">{step.title}</h3>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+            <AnimatePresence>
+                {open && activeStep !== null && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 bg-opacity-50"
+                        onClick={handleClose}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="bg-white rounded-xl shadow-2xl p-6 max-w-2xl w-full relative"
+                            onClick={e => e.stopPropagation()}
+                        >
+                            <h3 className="mb-4 text-xl font-semibold text-red-500 text-center">
+                                Step {activeStep + 1} : {steps[activeStep].title}
+                            </h3>
+                            <div className="aspect-video w-full rounded-lg overflow-hidden">
+                                <iframe
+                                    src={steps[activeStep].videoUrl}
+                                    title="YouTube video"
+                                    frameBorder={0}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    className="w-full h-full"
+                                ></iframe>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+}
