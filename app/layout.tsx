@@ -10,8 +10,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "AdvancisConsulting",
-  description: "AdvancisConsulting - Professional Consulting Services",
+  title: "Advancis Consulting - Professional Consulting Services",
+  description: "Advancis Consulting - Professional Consulting Services",
 };
 
 export default function RootLayout({

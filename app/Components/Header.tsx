@@ -83,8 +83,8 @@ export default function Header() {
                         (section) => (
                             <a
                                 key={section}
-                                className={`px-4 py-2 mt-2 tracking-wider text-sm cursor-pointer rounded-lg md:mt-0 md:ml-4 hover:bg-red-600 hover:text-white ${activeNav === section
-                                    ? "bg-red-600 text-white"
+                                className={`px-4 py-2 mt-2 tracking-wider text-sm cursor-pointer rounded-lg md:mt-0 md:ml-4 hover:bg-[#cc1f23] hover:text-white ${activeNav === section
+                                    ? "bg-[#cc1f23] text-white"
                                     : "text-black"
                                     }`}
                                 href={`/#${section}`}

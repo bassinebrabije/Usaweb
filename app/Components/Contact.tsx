@@ -1,18 +1,18 @@
 const SocialFloatingButtons = () => {
     return (
-        <div className="fixed bottom-4 right-4 z-40 flex flex-col gap-4 sm:right-4">
+        <div className="fixed bottom-4 right-4 z-40 flex flex-col gap-2 sm:right-4">
             {/* LinkedIn */}
             <a
                 href="https://www.linkedin.com/in/loubnaerraji2009/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-full p-2 shadow-md hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="flex items-center justify-center bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-full p-3 shadow-md hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 aria-label="LinkedIn"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
+                    width="15"
+                    height="15"
                     fill="white"
                     viewBox="0 0 24 24"
                 >
@@ -25,13 +25,13 @@ const SocialFloatingButtons = () => {
                 href="https://wa.me/+212663076122"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-green-500 rounded-full p-2 shadow-md hover:bg-green-600 focus:outline-none focus:shadow-outline-green active:bg-green-800"
+                className="flex items-center justify-center bg-green-500 rounded-full p-3 shadow-md hover:bg-green-600 focus:outline-none focus:shadow-outline-green active:bg-green-800"
                 aria-label="WhatsApp"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
+                    width="15"
+                    height="15"
                     fill="currentColor"
                     viewBox="0 0 16 16"
                 >
@@ -47,13 +47,13 @@ const SocialFloatingButtons = () => {
                 href="https://www.instagram.com/doctor.loubna/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 rounded-full p-2 shadow-md hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
+                className="flex items-center justify-center bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 rounded-full p-3 shadow-md hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
                 aria-label="Instagram"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
+                    width="15"
+                    height="15"
                     fill="white"
                     viewBox="0 0 16 16"
                 >

@@ -29,7 +29,7 @@ export default function How() {
 
     return (
         <div className="pb-20">
-            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mt-20">
+            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mt-10">
                 <div className="mb-16 text-center">
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}
@@ -59,7 +59,7 @@ export default function How() {
                         Get seen and recognized as an impact-driving thought leader, while earning 20% more.
                     </motion.p>
                 </div>
-                <div className="grid gap-8 md:grid-cols-3 lg:gap-12 bor">
+                <div className="grid gap-8 md:grid-cols-3 lg:gap-12">
                     {steps.map((step, idx) => (
                         <motion.div
                             key={idx}
@@ -67,16 +67,24 @@ export default function How() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.7, delay: 0.3 + idx * 0.1 }}
-                            className="p-8 transition-transform duration-300 bg-white rounded-xl border-2 border-red-100 hover:scale-110 cursor-pointer"
                             onClick={() => handleOpen(idx)}
+                            className="relative group p-8 transition-transform duration-300 bg-white rounded-xl border-2 border-red-100 md:hover:scale-110 cursor-pointer overflow-hidden"
                         >
-                            <div className="flex items-center justify-center w-16 h-16 mb-6 text-red-500 bg-red-100 rounded-full">
-                                <span className="text-3xl font-bold">{idx + 1}</span>
+                            {/* animated red overlay (desktop only) */}
+                            <div className="absolute inset-0 bg-red-100 origin-left scale-x-0 md:group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
+
+                            {/* content */}
+                            <div className="relative z-10">
+                                <div className="flex items-center justify-center w-16 h-16 mb-6 text-[#cc1f23] bg-red-100 rounded-full">
+                                    <span className="text-3xl font-bold">{idx + 1}</span>
+                                </div>
+                                <h3 className="mb-3 text-xl font-semibold text-gray-800">{step.title}</h3>
                             </div>
-                            <h3 className="mb-3 text-xl font-semibold text-gray-800">{step.title}</h3>
                         </motion.div>
                     ))}
                 </div>
+
+
             </div>
 
             <AnimatePresence>
@@ -98,7 +106,7 @@ export default function How() {
                         >
                             {/* Left side: video + image */}
                             <div className="md:w-1/2 p-6 border-b md:border-b-0 md:border-r border-gray-200 flex-shrink-0 flex flex-col">
-                                <h3 className="mb-4 text-xl font-semibold text-red-500">
+                                <h3 className="mb-4 text-xl font-semibold text-[#cc1f23]">
                                     Step {activeStep + 1} : {steps[activeStep].title}
                                 </h3>
                                 <div className="aspect-video w-full rounded-lg overflow-hidden mb-4">

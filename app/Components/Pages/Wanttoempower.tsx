@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
-const Wework = () => {
+const Wanttoempower = () => {
     return (
-        <section className="max-w-7xl mx-auto px-4  sm:px-6 lg:px-8">
+        <section className="max-w-7xl mx-auto px-4  sm:px-6 lg:px-8 mb-15">
             <motion.div
                 className="rounded-2xl p-8 text-center bg-[#cc1f23] relative"
                 initial={{ opacity: 0, y: 30 }}
@@ -14,12 +14,21 @@ const Wework = () => {
 
                 <div className="relative z-10 max-w-5xl mx-auto">
                     <motion.h1
-                        className="max-w-4xl text-sm text-white mx-auto mt-4 sm:text-lg"
+                        className="max-w-4xl text-base text-white mx-auto mt-4 font-extrabold sm:text-2xl"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        We work with a small number of executives each month to implement the 90 Day Unlock Your Dream Career program. If you're interested, we'll call you. Just pick a date and time that works for you below:
+                        WANT TO EMPOWER YOUR TEAMS?
+
+                    </motion.h1>
+                    <motion.h1
+                        className="max-w-4xl text-base text-white mx-auto mt-4 font-extrabold sm:text-2xl"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >  NOT SURE WHERE TO START?
+
                     </motion.h1>
 
                     {/* CTA Button */}
@@ -31,24 +40,16 @@ const Wework = () => {
                     >
                         <a
                             href="#book-demo"
-                            className="px-6 py-3 text-xs sm:text-base font-bold text-center text-red-500 bg-white rounded-xl mb-"
+                            className="px-6 py-3 text-xs sm:text-base font-bold text-center text-[#cc1f23] bg-white rounded-xl mb-"
                         >
-                            BOOK A FREE CAREER STRATEGY CALL
+                            CORPORATIONS - CONNECT WITH US
                         </a>
                     </motion.div>
 
-                    <motion.p
-                        className="max-w-4xl text-sm text-white mx-auto mt-4 sm:text-lg"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.7, duration: 0.8 }}
-                    >
-                        (spaces extremely limited)
-                    </motion.p>
                 </div>
             </motion.div>
         </section>
     );
 };
 
-export default Wework;
+export default Wanttoempower;

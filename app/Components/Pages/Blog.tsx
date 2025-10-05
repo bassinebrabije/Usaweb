@@ -57,8 +57,8 @@ Radio Interviews – Podcast Guesting`,
                             className="w-full h-48 object-cover"
                         />
                     </div>
-                    <div className="p-4">
-                        <div className="text-xl font-bold text-red-600  mb-2">{post.title}</div>
+                    <div className="p-10">
+                        <div className="text-xl font-bold text-[#cc1f23]  mb-2">{post.title}</div>
                         <div className="text-lg font-medium text-gray-900  mb-2">{post.subtitle}</div>
                         <p className="text-gray-500 text-sm  ligh leading-8">{post.description}</p>
                     </div>

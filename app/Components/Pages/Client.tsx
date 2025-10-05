@@ -56,9 +56,9 @@ export default function TrustedBy() {
                                 height={150}
                                 loading="lazy"
                                 decoding="async"
-                                className="w-40"
-                                style={{ filter: "grayscale(100%)" }}
+                                className="sm:w-48 sm:filter sm:grayscale hover:grayscale-0 transition duration-300"
                             />
+
                             <figcaption className="sr-only">{logo.alt}</figcaption>
                         </figure>
                     ))}

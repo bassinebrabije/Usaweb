@@ -13,6 +13,8 @@ import Work from "./Components/Pages/Wework";
 import Putitall from "./Components/Pages/Putitall";
 import Blog from "./Components/Pages/Blog";
 import SocialFloatingButtons from "./Components/Contact";
+import Wanttoempower from "./Components/Pages/Wanttoempower";
+import Weworkwith from "./Components/Pages/Weworkwith";
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
 
@@ -58,12 +60,13 @@ export default function Home() {
           <Header />
           <Hero />
           <Client />
-
           <Unlock />
-          <Work />
+          {/* <Work /> */}
           <How />
           <Putitall />
           <Blog />
+          <Wanttoempower />
+          <Weworkwith />
           <SocialFloatingButtons />
         </>
       )}

@@ -41,7 +41,7 @@ export default function Home() {
             >
                 <a
                     href=""
-                    className="px-6 py-3 text-base font-bold text-center text-white bg-red-600 rounded-xl "
+                    className="px-6 py-3 text-base font-bold text-center text-white bg-[#cc1f23] rounded-xl "
                 >
                     CORPORATIONS - LEARN MORE
                 </a>
