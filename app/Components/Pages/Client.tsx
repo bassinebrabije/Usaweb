@@ -28,7 +28,7 @@ export default function TrustedBy() {
     const allLogos = [...logos, ...logos];
 
     return (
-        <section className="relative pt-20 pb-10 flex flex-col items-center">
+        <section className="relative pt-20  flex flex-col items-center">
             <p className="text-center text-base text-[#6b7280] mb-15 w-auto px-4 max-w-3xl">
                 Our clients are directors, senior leaders, and executives in biotech, pharma, healthcare, and life sciences—driving growth through high-performing teams and cultures.
             </p>
@@ -47,7 +47,7 @@ export default function TrustedBy() {
                     {allLogos.map((logo, idx) => (
                         <figure
                             key={idx}
-                            className="mb-4 sm:mb-2 md:mb-4 lg:mb-0 pl-12"
+                            className="mb-4  lg:mb-0 pl-12"
                         >
                             <img
                                 src={logo.src}

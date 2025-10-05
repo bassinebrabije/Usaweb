@@ -36,7 +36,7 @@ export default function Unlock() {
                     <div className="mt-8 sm:flex md:mt-10">
                         <a
                             href=""
-                            className="px-6 py-3 text-base font-bold text-center text-white bg-red-600 rounded-xl "
+                            className="px-6 py-3 text-xs sm:text-base  font-bold text-center text-white bg-red-600 rounded-xl "
                         >
                             BOOK A FREE CAREER STRATEGY CALL
                         </a>

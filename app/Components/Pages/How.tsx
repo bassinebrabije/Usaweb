@@ -29,7 +29,7 @@ export default function How() {
 
     return (
         <div className="pb-20">
-            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mt-20">
                 <div className="mb-16 text-center">
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}
@@ -115,7 +115,7 @@ export default function How() {
                                     <img
                                         src={steps[activeStep].imgUrl}
                                         alt="Step illustration"
-                                        className="w-[30rem] rounded-lg mt-4 mx-auto"
+                                        className="w-[15rem]  sm:w-[40rem] rounded-lg mt-4 mx-auto"
                                     />
                                 )}
 
