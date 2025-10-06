@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
     return (
-        <div className="px-4 mx-auto max-w-7xl lg:text-center mt-[9rem] sm:mt-[11rem] ">
+        <section className="px-4 mx-auto max-w-7xl lg:text-center mt-[9rem] sm:mt-[11rem] ">
             <motion.div
                 initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function Home() {
             >
                 <a
                     href=""
-                    className="px-6 py-3 text-base font-bold text-center text-white bg-[#cc1f23] rounded-xl "
+                    className="px-6 py-3 text-base font-bold text-center text-white bg-[#cc1f23] hover:scale-105 rounded-xl "
                 >
                     CORPORATIONS - LEARN MORE
                 </a>
@@ -57,6 +57,6 @@ export default function Home() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
             ></motion.iframe>
-        </div>
+        </section>
     );
 }

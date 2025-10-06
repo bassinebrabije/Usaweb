@@ -1,4 +1,7 @@
+"use client";
+
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Together = () => {
     // Variants for the container
@@ -7,7 +10,7 @@ const Together = () => {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2, // Stagger the icons
+                staggerChildren: 0.2,
                 duration: 0.5,
             },
         },
@@ -19,6 +22,14 @@ const Together = () => {
         visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
     };
 
+    // Icons with image paths
+    const items = [
+        { icon: "/icons/clarity.png", title: "Gaining Clarity" },
+        { icon: "/icons/decisionmaking.png", title: "Making Decisions" },
+        { icon: "/icons/handshake.png", title: "Getting Offers" },
+        { icon: "/icons/earnings.png", title: "Earning More" },
+    ];
+
     return (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
             <motion.div
@@ -27,29 +38,40 @@ const Together = () => {
                     backgroundImage:
                         "url('https://i.ibb.co/V0dcDxgT/RD30b-VRqe-Vv6l69-XPx-Xg-CL9z-CSxj-Tn2-Vx-W97-AANg-file.jpg')",
                 }}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
             >
                 {/* Optional overlay */}
                 <div className="absolute inset-0 bg-black/50 rounded-2xl"></div>
 
                 <div className="relative z-10 max-w-5xl mx-auto">
+                    {/* Heading */}
                     <motion.h2
                         className="font-display text-2xl font-bold tracking-tight text-white sm:text-4xl"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                        variants={{
+                            hidden: { opacity: 0, y: -20 },
+                            visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+                        }}
                     >
-                        Put it all together and feel fulfilled and empowered to level up your career: get seen, recognized, & earn 20% more.
+                        Put it all together and feel fulfilled and empowered to level up your
+                        career: get seen, recognized, & earn 20% more.
                     </motion.h2>
+
+                    {/* Paragraph */}
                     <motion.p
                         className="max-w-4xl text-sm text-white mx-auto mt-4 sm:text-lg"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.5, duration: 0.8 }}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                        variants={{
+                            hidden: { opacity: 0 },
+                            visible: { opacity: 1, transition: { delay: 0.3, duration: 0.8 } },
+                        }}
                     >
-                        Say goodbye to feeling stuck, not knowing what to do, and not being visible. Simply by using these steps to attract the right opportunities to you, within 3 months you could be…
+                        Say goodbye to feeling stuck, not knowing what to do, and not being
+                        visible. Simply by using these steps to attract the right
+                        opportunities to you, within 3 months you could be…
                     </motion.p>
 
                     {/* Grid of icons */}
@@ -57,20 +79,24 @@ const Together = () => {
                         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10 text-center"
                         variants={containerVariants}
                         initial="hidden"
-                        animate="visible"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
                     >
-                        {[
-                            { icon: "💡", title: "Gaining Clarity" },
-                            { icon: "📈", title: "Making Decisions" },
-                            { icon: "🤝", title: "Getting Offers" },
-                            { icon: "💰", title: "Earning More" },
-                        ].map((item, idx) => (
+                        {items.map((item, idx) => (
                             <motion.div
                                 key={idx}
                                 className="flex flex-col items-center text-white"
                                 variants={itemVariants}
                             >
-                                <div className="text-5xl mb-4">{item.icon}</div>
+                                <div className="mb-4">
+                                    <Image
+                                        src={item.icon}
+                                        alt={item.title}
+                                        width={64}
+                                        height={64}
+                                        className="object-contain"
+                                    />
+                                </div>
                                 <h3 className="font-semibold text-lg">{item.title}</h3>
                             </motion.div>
                         ))}

@@ -21,7 +21,6 @@ const Wework = () => {
                     >
                         We work with a small number of executives each month to implement the 90 Day Unlock Your Dream Career program. If you're interested, we'll call you. Just pick a date and time that works for you below:
                     </motion.h1>
-
                     {/* CTA Button */}
                     <motion.div
                         className="mt-10 mb-10"
@@ -31,7 +30,7 @@ const Wework = () => {
                     >
                         <a
                             href="#book-demo"
-                            className="px-6 py-3 text-xs sm:text-base font-bold text-center text-red-500 bg-white rounded-xl mb-"
+                            className="px-6 py-3 text-xs sm:text-base font-bold text-center text-[#cc1f23]  bg-white  rounded-xl "
                         >
                             BOOK A FREE CAREER STRATEGY CALL
                         </a>

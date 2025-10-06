@@ -28,7 +28,7 @@ export default function How() {
     };
 
     return (
-        <div className="pb-20">
+        <section className="pb-20">
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mt-10">
                 <div className="mb-16 text-center">
                     <motion.h2
@@ -70,17 +70,25 @@ export default function How() {
                             onClick={() => handleOpen(idx)}
                             className="relative group p-8 transition-transform duration-300 bg-white rounded-xl border-2 border-red-100 md:hover:scale-110 cursor-pointer overflow-hidden"
                         >
-                            {/* animated red overlay (desktop only) */}
-                            <div className="absolute inset-0 bg-red-100 origin-left scale-x-0 md:group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
-
                             {/* content */}
-                            <div className="relative z-10">
-                                <div className="flex items-center justify-center w-16 h-16 mb-6 text-[#cc1f23] bg-red-100 rounded-full">
-                                    <span className="text-3xl font-bold">{idx + 1}</span>
+                            <div className="relative z-10 flex flex-col items-center">
+                                {/* circle with number */}
+                                <div className="flex items-center justify-center w-16 h-16 mb-6 text-[#cc1f23] rounded-full transition-colors duration-300 group-hover:bg-[#cc1f23] group-hover:text-white">
+                                    <span className="text-3xl font-bold transition-colors duration-300 group-hover:text-white">
+                                        {idx + 1}
+                                    </span>
                                 </div>
-                                <h3 className="mb-3 text-xl font-semibold text-gray-800">{step.title}</h3>
+
+                                {/* title */}
+                                <h3 className="mb-3 text-xl font-semibold text-gray-800 transition-colors duration-300 group-hover:text-white">
+                                    {step.title}
+                                </h3>
                             </div>
+
+                            {/* hover background for entire box */}
+                            <div className="absolute inset-0 bg-[#cc1f23] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl z-0"></div>
                         </motion.div>
+
                     ))}
                 </div>
 
@@ -164,6 +172,6 @@ export default function How() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </div>
+        </section>
     );
 }

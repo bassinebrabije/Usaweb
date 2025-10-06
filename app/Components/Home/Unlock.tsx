@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Unlock() {
     return (
-        <div className="relative flex flex-col items-center max-w-7xl px-5 mx-auto md:flex-row sm:px-6  ">
+        <section className="relative flex flex-col items-center max-w-7xl px-5 mx-auto md:flex-row sm:px-6  ">
             {/* Left Content */}
             <motion.div
                 initial={{ opacity: 0, x: -60 }}
@@ -36,14 +36,13 @@ export default function Unlock() {
                     <div className="mt-8 sm:flex md:mt-10">
                         <a
                             href=""
-                            className="px-6 py-3 text-xs sm:text-base  font-bold text-center text-white bg-[#cc1f23] rounded-xl "
+                            className="px-6 py-3 text-xs sm:text-base  font-bold text-center text-white bg-[#cc1f23] hover:scale-105 rounded-xl "
                         >
                             BOOK A FREE CAREER STRATEGY CALL
                         </a>
                     </div>
                 </div>
             </motion.div>
-
             {/* Right Image */}
             <motion.div
                 initial={{ opacity: 0, x: 60 }}
@@ -66,6 +65,6 @@ export default function Unlock() {
                     </div>
                 </div>
             </motion.div>
-        </div>
+        </section>
     );
 }

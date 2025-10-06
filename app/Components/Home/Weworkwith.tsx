@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Weworkwith() {
     return (
-        <div className="relative flex flex-col items-center max-w-screen-xl px-10 mx-auto md:flex-row sm:px-6  ">
+        <section className="relative flex flex-col items-center max-w-screen-xl px-5 mx-auto md:flex-row sm:px-6  ">
             {/* Left Content */}
             <motion.div
                 initial={{ opacity: 0, x: -60 }}
@@ -12,13 +12,17 @@ export default function Weworkwith() {
                 className="flex items-center py-10 md:w-1/2 sm:pl-5"
             >
                 <div className="text-left">
-                    <h2 className="text-4xl font-extrabold tracking-tight text-gray-800 leading-none ">
+                    <h1 className="text-4xl font-extrabold mb-6 tracking-tight text-gray-800 leading-none ">
                         WE WORK WITH...
+                    </h1>
+
+                    <h2 className="text-4xl font-extrabold leading-tight text-gray-800  ">
+                        INDIVIDUALS.  ORGANIZATIONS. UNIVERSITIES. TRADE ASSOCIATIONS.
                     </h2>
                     <div className="mt-8 sm:flex md:mt-10">
                         <a
                             href=""
-                            className="px-6 py-3 text-xs sm:text-base  font-bold text-center text-white bg-red-600 rounded-xl "
+                            className="px-6 py-3 text-xs sm:text-base  font-bold text-center text-white bg-[#cc1f23] hover:scale-105 rounded-xl "
                         >
                             CHECK IF THIS IS FOR YOU & HOW WE CAN HELP
                         </a>
@@ -37,8 +41,8 @@ export default function Weworkwith() {
                 <div className="relative w-full p-3 rounded md:p-8">
                     <div className="rounded-lg bg-white text-black w-full">
                         <img
-                            src="/KsLgZTWfRGGGWbxk5ojN_ZAVSoDiKRWmrxQJ7evlA_UV9A0389r.jpg"
-                            alt='KsLgZTWfRGGGWbxk5ojN_ZAVSoDiKRWmrxQJ7evlA_UV9A0389r'
+                            src="/bEthJ6MKQ86bybqNFwoB_Profpic.png"
+                            alt='bEthJ6MKQ86bybqNFwoB_Profpic'
                             width={150}
                             height={150}
                             loading="lazy"
@@ -48,6 +52,6 @@ export default function Weworkwith() {
                     </div>
                 </div>
             </motion.div>
-        </div>
+        </section>
     );
 }

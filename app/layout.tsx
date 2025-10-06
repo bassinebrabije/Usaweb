@@ -10,8 +10,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Advancis Consulting - Professional Consulting Services",
-  description: "Advancis Consulting - Professional Consulting Services",
+  title: "Advancis Consulting : Biopharma Executive Coaching",
+  description: "Advancis Consulting : Biopharma Executive Coaching",
 };
 
 export default function RootLayout({

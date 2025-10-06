@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import logo from "../../public/logo.png";
+import logo from "../../../public/logo.png";
 
 export default function Header() {
     const [open, setOpen] = useState(false);
@@ -36,9 +36,9 @@ export default function Header() {
     return (
         <header
             className={`w-full fixed top-0 left-0 z-50 transition-colors duration-300 border-b border-black/8 ${isMobileOrTablet
-                ? "bg-white-800/70 backdrop-blur-lg"
+                ? "bg-white  backdrop-blur-lg"
                 : scroll
-                    ? "bg-white-800/70 backdrop-blur-lg"
+                    ? "bg-white backdrop-blur-lg"
                     : "bg-transparent"
                 }`}
         >
@@ -79,27 +79,31 @@ export default function Header() {
                     className={`flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row ${open ? "flex" : "hidden"
                         }`}
                 >
-                    {["Home", "About Us", "Services", "Results", "Contact Us"].map(
-                        (section) => (
-                            <a
-                                key={section}
-                                className={`px-4 py-2 mt-2 tracking-wider text-sm cursor-pointer rounded-lg md:mt-0 md:ml-4 hover:bg-[#cc1f23] hover:text-white ${activeNav === section
-                                    ? "bg-[#cc1f23] text-white"
-                                    : "text-black"
-                                    }`}
-                                href={`/#${section}`}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    scrollToSection(section);
-                                    setActiveNav(section);
-                                    setOpen(false);
-                                }}
-                            >
-                                {section}
-                            </a>
-                        )
-                    )}
+                    {[
+                        { name: "Home", path: "/" },
+                        { name: "About Us", path: "/about" },
+                        { name: "Services", path: "/#Services" },
+                        { name: "Results", path: "/#Results" },
+                        { name: "Contact Us", path: "/#Contact Us" },
+                    ].map((section) => (
+                        <Link
+                            key={section.name}
+                            href={section.path}
+                            scroll={false}
+                            className={`px-4 py-2 mt-2 tracking-wider text-sm cursor-pointer rounded-lg md:mt-0 md:ml-4 hover:bg-[#cc1f23] hover:text-white ${activeNav === section.name
+                                ? "bg-[#cc1f23] text-white"
+                                : "text-black"
+                                }`}
+                            onClick={() => {
+                                setActiveNav(section.name);
+                                setOpen(false);
+                            }}
+                        >
+                            {section.name}
+                        </Link>
+                    ))}
                 </nav>
+
             </div>
         </header>
     );

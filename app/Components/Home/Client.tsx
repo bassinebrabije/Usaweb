@@ -28,13 +28,13 @@ export default function TrustedBy() {
     const allLogos = [...logos, ...logos];
 
     return (
-        <section className="relative pt-20  flex flex-col items-center">
-            <p className="text-center text-base text-[#6b7280] mb-15 w-auto px-4 max-w-3xl">
+        <section className="relative pt-10 sm:pt-20 flex flex-col items-center mb-5">
+            <p className="text-center text-base text-[#6b7280] mb-10 sm:mb-12 w-auto px-4 max-w-3xl">
                 Our clients are directors, senior leaders, and executives in biotech, pharma, healthcare, and life sciences—driving growth through high-performing teams and cultures.
             </p>
-            <div className="max-w-6xl w-full overflow-hidden">
+            <div className="max-w-6xl w-full overflow-hidden ">
                 <motion.div
-                    className="flex"
+                    className="flex items-center" // center vertically
                     style={{ width: "max-content" }}
                     animate={{ x: ["0%", "-50%"] }}
                     transition={{
@@ -45,10 +45,7 @@ export default function TrustedBy() {
                     }}
                 >
                     {allLogos.map((logo, idx) => (
-                        <figure
-                            key={idx}
-                            className="mb-4  lg:mb-0 pl-12"
-                        >
+                        <div key={idx} className="px-4 flex items-center cursor-pointer"> {/* use px-4 instead of pl-8 */}
                             <img
                                 src={logo.src}
                                 alt={logo.alt}
@@ -56,14 +53,13 @@ export default function TrustedBy() {
                                 height={150}
                                 loading="lazy"
                                 decoding="async"
-                                className="sm:w-48 sm:filter sm:grayscale hover:grayscale-0 transition duration-300"
+                                className="h-auto  sm:filter sm:grayscale hover:grayscale-0 transition duration-300"
                             />
-
-                            <figcaption className="sr-only">{logo.alt}</figcaption>
-                        </figure>
+                        </div>
                     ))}
                 </motion.div>
             </div>
         </section>
+
     );
 }
