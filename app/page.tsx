@@ -12,21 +12,21 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-  /* if (showSplash) {
-     return (
-       <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
-   
-         <div className="animate-fade-in">
-           <Image
-             src="/logo.png" // Replace with your logo path
-             alt="Logo"
-             width={120}
-             height={120}
-             className="animate-scale-up"
-           />
-         </div>
-  
-         <style jsx global>{`
+  if (showSplash) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
+
+        <div className="animate-fade-in">
+          <Image
+            src="/logo.png" // Replace with your logo path
+            alt="Logo"
+            width={120}
+            height={120}
+            className="animate-scale-up"
+          />
+        </div>
+
+        <style jsx global>{`
            .animate-fade-in {
              animation: fadeIn 1.5s ease-in;
            }
@@ -42,10 +42,10 @@ export default function Home() {
              100% { transform: scale(1); }
            }
          `}</style>
-       </div>
-     );
-   }
-   */
+      </div>
+    );
+  }
+
   return (
     <>
       <Homee />

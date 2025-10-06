@@ -17,9 +17,7 @@ export default function Notification() {
     const hideMessage = () => {
         setShow(false);
     };
-
     if (!show) return null;
-
     return (
         <div className="hidden md:block rounded-lg shadow-lg p-4 bg-[#cc1f23] fixed bottom-4 left-4 z-50">
             <div className="relative mb-2">
