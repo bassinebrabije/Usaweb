@@ -11,6 +11,7 @@ import Blog from "../Components/Home/Blog";
 import Wanttoempower from "../Components/Home/Wanttoempower";
 import Weworkwith from "../Components/Home/Weworkwith";
 import Message from "../Components/Message";
+import Testimonial from "../Components/Home/Testimonial";
 import SocialFloatingButtons from "../Components/Contact";
 import Header from "../Components/Layout/Header";
 import Footer from "../Components/Layout/Footer";
@@ -28,6 +29,7 @@ const Home = () => {
             <Putitall />
             <Blog />
             <Wanttoempower />
+            <Testimonial />
             <Weworkwith />
             <SocialFloatingButtons />
             <Message />

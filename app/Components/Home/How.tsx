@@ -50,7 +50,7 @@ export default function How() {
                         transition={{ duration: 0.7, delay: 0.2 }}
                         className="max-w-3xl mx-auto text-lg leading-relaxed text-gray-900 sm:text-xl"
                     >
-                        The program is based on a 6-step method used by high-achieving executives to define, plan, and attract their next career opportunities.
+                        The program is based on a  <span className="text-[#cc1f23] font-bold" > 6-step </span>  method used by high-achieving executives to define, plan, and attract their <span className="text-[#cc1f23] font-bold" > next career opportunities.</span>
                     </motion.p>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ export default function How() {
                         transition={{ duration: 0.7, delay: 0.2 }}
                         className="max-w-3xl mx-auto text-lg leading-relaxed text-gray-900 sm:text-xl pt-3.5"
                     >
-                        Get seen and recognized as an impact-driving thought leader, while earning 20% more.
+                        Get <span className="text-[#cc1f23] font-bold" >  seen and recognized </span>  as an impact-driving thought leader, while <span className="text-[#cc1f23] font-bold" >  earning 20% more</span>.
                     </motion.p>
                 </div>
                 <div className="grid gap-8 md:grid-cols-3 lg:gap-12">
@@ -144,7 +144,6 @@ export default function How() {
                             <div className="md:w-1/2 p-6 overflow-y-auto max-h-[90vh] flex flex-col">
                                 <h4 className="mb-3 text-lg font-semibold text-gray-800">{steps[activeStep].detailsTitle}</h4>
                                 <p className="mb-4 text-gray-700 text-sm sm:text-base whitespace-pre-line">{steps[activeStep].detailsText}</p>
-
                                 {/* Testimonial */}
                                 {steps[activeStep].Testimonialtext && (
                                     <div className="p-4 rounded-2xl mt-2  border border-gray-200">
@@ -166,7 +165,6 @@ export default function How() {
                                                 </figcaption>
                                             </div>
                                         </figure>
-
                                     </div>
                                 )}
                             </div>

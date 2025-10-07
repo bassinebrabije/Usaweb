@@ -49,7 +49,7 @@ Radio Interviews – Podcast Guesting`,
     };
 
     return (
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4  p-5  sm:p-10 md:px-20 sm:max-w-7xl mx-auto mb-10">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4  p-5  sm:p-10 md:px-20 sm:max-w-7xl mx-auto mb-5">
             {posts.map((post, idx) => (
                 <motion.div
                     key={idx}
