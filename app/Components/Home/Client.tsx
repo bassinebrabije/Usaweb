@@ -30,7 +30,9 @@ export default function TrustedBy() {
     return (
         <section className="relative pt-10 sm:pt-20 flex flex-col items-center mb-5">
             <p className="text-center text-base text-[#6b7280] mb-10 sm:mb-12 w-auto px-4 max-w-3xl">
-                Our clients are directors, senior leaders, and executives in biotech, pharma, healthcare, and life sciences—driving growth through high-performing teams and cultures.
+                Our clients are directors, VPs, senior leaders, and executives in all industries
+                (pharma, healthcare, life sciences, higher education, banking, telecommunications, etc.)
+                driving growth through high-performing teams and cultures.
             </p>
             <div className="max-w-6xl w-full overflow-hidden ">
                 <motion.div

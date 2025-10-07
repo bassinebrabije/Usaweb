@@ -12,10 +12,11 @@ export default function Unlock() {
                 className="flex items-center py-10 md:w-1/2 sm:pl-5"
             >
                 <div className="text-left">
-                    <h2 className="text-4xl font-extrabold tracking-tight text-gray-800 leading-none ">
-                        UNLOCK YOUR <span className="font-bold text-[#cc1f23]">DREAM CAREER</span>
+                    <h2 className="text-4xl font-extrabold tracking-tight text-gray-800 leading-[4rem] ">
+                        {/* UNLOCK YOUR <span className="font-bold text-[#cc1f23]">DREAM CAREER</span> */}
+                        Unlock the leader within—our executive and career coaching empowers you to think boldly, lead strategically, and achieve what once felt out of reach.
                     </h2>
-                    <p className="mt-4 text-xl font-semibold text-gray-500">
+                    {/* <p className="mt-4 text-xl font-semibold text-gray-500">
                         The 90-Day Career Advancement Framework
                     </p>
                     <p className="mt-4 text-base  text-gray-500">
@@ -40,7 +41,7 @@ export default function Unlock() {
                         >
                             BOOK A FREE CAREER STRATEGY CALL
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </motion.div>
             {/* Right Image */}
