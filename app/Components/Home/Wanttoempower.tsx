@@ -14,7 +14,7 @@ const Wanttoempower = () => {
             >
                 <div className="relative z-10 max-w-5xl mx-auto">
                     <motion.h1
-                        className="max-w-4xl text-base text-white mx-auto mt-4 font-extrabold sm:text-2xl"
+                        className="max-w-4xl text-2xl text-white mx-auto mt-4 sm:text-3xl font-bold"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
@@ -24,7 +24,7 @@ const Wanttoempower = () => {
                     </motion.h1>
 
                     <motion.h1
-                        className="max-w-4xl text-base text-white mx-auto mt-4 font-extrabold sm:text-2xl"
+                        className="max-w-4xl text-2xl text-white mx-auto mt-4 sm:text-3xl font-bold"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
@@ -35,7 +35,7 @@ const Wanttoempower = () => {
 
                     {/* CTA Button */}
                     <motion.div
-                        className="mt-10 mb-10"
+                        className="mt-10 mb-5"
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true, amount: 0.3 }}
@@ -43,7 +43,7 @@ const Wanttoempower = () => {
                     >
                         <a
                             href="#book-demo"
-                            className="px-6 py-3 text-xs sm:text-base font-bold text-center text-[#cc1f23]  bg-white hover:scale-125 rounded-xl"
+                            className="px-6 py-3 text-xs sm:text-base font-bold text-center text-[#cc1f23]  bg-white uppercase hover:scale-105  transition-transform duration-300 block w-fit mx-auto rounded-xl"
                         >
                             CORPORATIONS - CONNECT WITH US
                         </a>

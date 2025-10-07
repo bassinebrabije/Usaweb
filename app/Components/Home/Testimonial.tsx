@@ -1,52 +1,36 @@
 'use client';
 
-import { useRef } from "react";
-
 const teamMembers = [
     {
-        name: "David Forren",
-        role: "Founder / CEO",
-        media: "/Testimonial/1.mp4",
-        type: "video",
+        name: "Daniela Koumides",
+        role: "MBA",
+        media: "https://drive.google.com/file/d/1oRYVTAOeSVssLGHF_AOrFLaEtusubcoK/preview",
+        type: "iframe",
     },
     {
-        name: "Amil Evara",
-        role: "UI/UX Designer",
-        media: "/Testimonial/1.mp4",
-        type: "video",
+        name: "Julianne Jarvis",
+        role: "MBA",
+        media: "https://drive.google.com/file/d/1xAsBl_yyiUgqvzBnmybaTODWob-oG7Y9/preview",
+        type: "iframe",
     },
     {
-        name: "Ebele Egbuna",
-        role: "Support Consultant",
-        media: "/Testimonial/1.mp4",
-        type: "video",
+        name: "Shruti Goel",
+        role: "",
+        media: "https://drive.google.com/file/d/1XybxluBwY6COKLrxyAQBpGR42zdIFVc5/preview",
+        type: "iframe",
     },
     {
-        name: "Ebele Egbuna",
-        role: "Support Consultant",
-        media: "/Testimonial/1.mp4",
-        type: "video",
+        name: "Marisela Riveros",
+        role: "MBA",
+        media: "https://drive.google.com/file/d/1O4VTOcZ29gdhNxwHFmTljfR773bfq1XF/preview",
+        type: "iframe",
     },
+    // other members...
 ];
 
 export default function TeamSection() {
-    const videoRefs = useRef<HTMLVideoElement[]>([]);
-
-    const handleVideoClick = (index: number) => {
-        const currentVideo = videoRefs.current[index];
-        if (!currentVideo) return;
-
-        // Pause all other videos
-        videoRefs.current.forEach((video, i) => {
-            if (video && i !== index) video.pause();
-        });
-
-        // Play/pause clicked video
-        currentVideo.paused ? currentVideo.play() : currentVideo.pause();
-    };
-
     return (
-        <div className="max-w-7xl px-4 py-5 sm:px-6  mx-auto">
+        <div className="max-w-7xl px-4 py-5 sm:px-6 mx-auto">
             {/* Title */}
             <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
                 <h2 className="text-4xl font-bold tracking-tight sm:leading-16 text-gray-800 sm:text-4xl lg:text-5xl">
@@ -55,51 +39,46 @@ export default function TeamSection() {
             </div>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12">
                 {teamMembers.map((member, index) => (
                     <div key={index} className="text-center">
-                        <div
-                            className="mx-auto w-60 h-[480px] rounded-xl overflow-hidden cursor-pointer relative"
-                            onClick={() => member.type === "video" && handleVideoClick(index)}
-                        >
-                            {member.type === "image" ? (
-                                <img
-                                    src={member.media}
-                                    alt={member.name}
-                                    className="object-cover w-full h-full"
-                                />
-                            ) : (
+                        {/* Portrait video container */}
+                        <div className="mx-auto w-full max-w-[300px] h-0 pb-[177.77%] rounded-xl overflow-hidden relative cursor-pointer">
+                            {member.type === "video" && (
                                 <video
-                                    ref={(el) => {
-                                        if (el) videoRefs.current[index] = el;
-                                    }}
                                     src={member.media}
-                                    className="object-cover w-full h-full"
+                                    className="absolute top-0 left-0 w-full h-full object-cover"
                                     loop
                                     controls
+                                    playsInline
+                                    muted
+                                />
+                            )}
+
+                            {member.type === "iframe" && (
+                                <iframe
+                                    src={member.media}
+                                    className="absolute top-0 left-0 w-full h-full"
+                                    allow="autoplay; fullscreen"
+                                    allowFullScreen
+                                    loading="lazy"
+                                    frameBorder="0"
                                 />
                             )}
                         </div>
-                        <div className="mt-8 sm:mt-10">
+                        {/* Name and Role */}
+                        <div className="mt-4 sm:mt-6">
                             <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
                                 {member.name}
                             </h3>
-                            <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-                                {member.role}
-                            </p>
+                            {member.role && (
+                                <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
+                                    {member.role}
+                                </p>
+                            )}
                         </div>
                     </div>
                 ))}
-            </div>
-
-            {/* Button */}
-            <div className="mt-12 text-center">
-                <a
-                    href=""
-                    className="px-6 py-3 text-base font-bold text-center text-white bg-[#cc1f23] hover:scale-105 transition-transform rounded-xl inline-block"
-                >
-                    READ MORE SUCCESS STORIES
-                </a>
             </div>
         </div>
     );

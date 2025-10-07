@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import logo from "../../../public/logo.png";
 
@@ -10,7 +11,8 @@ export default function Header() {
     const [open, setOpen] = useState(false);
     const [scroll, setScroll] = useState(false);
     const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
-    const [activeNav, setActiveNav] = useState("Home");
+
+    const pathname = usePathname(); // get current path
 
     useEffect(() => {
         const handleScroll = () => setScroll(window.scrollY > 50);
@@ -26,17 +28,18 @@ export default function Header() {
         };
     }, []);
 
-    const scrollToSection = (id: string) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-    };
+    const navLinks = [
+        { name: "Home", path: "/" },
+        { name: "About Us", path: "/About" },
+        { name: "Services", path: "/Services" },
+        { name: "Results", path: "/Results" },
+        { name: "Contact Us", path: "/Contact" },
+    ];
 
     return (
         <header
             className={`w-full fixed top-0 left-0 z-50 transition-colors duration-300 border-b border-black/8 ${isMobileOrTablet
-                ? "bg-white  backdrop-blur-lg"
+                ? "bg-white backdrop-blur-lg"
                 : scroll
                     ? "bg-white backdrop-blur-lg"
                     : "bg-transparent"
@@ -45,13 +48,7 @@ export default function Header() {
             <div className="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
                 <div className="p-4 flex flex-row items-center justify-between">
                     <Link href="/">
-                        <Image
-                            src={logo}
-                            alt="logo"
-                            width={64}
-                            height={64}
-                            priority
-                        />
+                        <Image src={logo} alt="logo" width={64} height={64} priority />
                     </Link>
                     <button
                         className="md:hidden rounded-lg focus:outline-none"
@@ -79,31 +76,24 @@ export default function Header() {
                     className={`flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row ${open ? "flex" : "hidden"
                         }`}
                 >
-                    {[
-                        { name: "Home", path: "/" },
-                        { name: "About Us", path: "/about" },
-                        { name: "Services", path: "/#Services" },
-                        { name: "Results", path: "/#Results" },
-                        { name: "Contact Us", path: "/#Contact Us" },
-                    ].map((section) => (
+                    {navLinks.map((section) => (
                         <Link
                             key={section.name}
                             href={section.path}
                             scroll={false}
-                            className={`px-4 py-2 mt-2 tracking-wider text-sm cursor-pointer rounded-lg md:mt-0 md:ml-4 hover:bg-[#cc1f23] hover:text-white ${activeNav === section.name
+                            className={`px-4 py-2 mt-2 tracking-wider text-sm cursor-pointer rounded-lg md:mt-0 md:ml-4 hover:bg-[#cc1f23] hover:text-white ${pathname === section.path
                                 ? "bg-[#cc1f23] text-white"
                                 : "text-black"
                                 }`}
                             onClick={() => {
-                                setActiveNav(section.name);
                                 setOpen(false);
+                                window.scrollTo(0, 0); // 👈 instantly jump to top
                             }}
                         >
                             {section.name}
                         </Link>
                     ))}
                 </nav>
-
             </div>
         </header>
     );
