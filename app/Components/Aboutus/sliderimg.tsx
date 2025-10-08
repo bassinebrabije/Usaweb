@@ -18,12 +18,15 @@ export default function ImageCarousel() {
     const carouselRef = useRef<HTMLDivElement>(null);
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-    // Auto slide effect (only on desktop)
+    // ✅ Auto-slide only on desktop
     useEffect(() => {
         let currentX = 0;
+        let interval: NodeJS.Timeout;
+
         const slide = async () => {
-            const carouselWidth = carouselRef.current?.scrollWidth || 0;
-            const viewportWidth = carouselRef.current?.offsetWidth || 0;
+            if (!carouselRef.current) return;
+            const carouselWidth = carouselRef.current.scrollWidth;
+            const viewportWidth = carouselRef.current.offsetWidth;
             const maxScroll = carouselWidth - viewportWidth;
 
             currentX -= 300;
@@ -35,18 +38,20 @@ export default function ImageCarousel() {
             });
         };
 
-        // Only enable auto-slide on large screens
         if (window.innerWidth >= 768) {
-            const interval = setInterval(slide, 3000);
-            return () => clearInterval(interval);
+            interval = setInterval(slide, 3000);
         }
+
+        return () => {
+            if (interval) clearInterval(interval);
+        };
     }, [controls]);
 
     return (
         <section className="flex flex-col items-center justify-center max-w-7xl mx-auto p-6 mt-16">
-
             {/* Carousel */}
             <div className="overflow-hidden w-full max-w-7xl mx-auto">
+                {/* 🖥️ Desktop layout */}
                 <motion.div
                     ref={carouselRef}
                     className="hidden md:flex gap-4 cursor-grab active:cursor-grabbing"
@@ -54,7 +59,6 @@ export default function ImageCarousel() {
                     dragConstraints={{ left: -1000, right: 0 }}
                     animate={controls}
                 >
-                    {/* Desktop flex layout */}
                     {images.map((src, index) => (
                         <div
                             key={index}
@@ -65,14 +69,15 @@ export default function ImageCarousel() {
                                 src={src}
                                 alt={`Slide ${index + 1}`}
                                 fill
+                                sizes="(max-width: 768px) 100vw, 25vw"
                                 className="object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
-                                priority={index < 4}
+                                priority={index < 2}
                             />
                         </div>
                     ))}
                 </motion.div>
 
-                {/* Mobile grid layout */}
+                {/* 📱 Mobile layout */}
                 <div className="grid grid-cols-2 gap-4 md:hidden">
                     {images.map((src, index) => (
                         <div
@@ -84,18 +89,20 @@ export default function ImageCarousel() {
                                 src={src}
                                 alt={`Slide ${index + 1}`}
                                 fill
+                                sizes="(max-width: 768px) 50vw, 100vw"
                                 className="object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
-                                priority={index < 4}
+                                priority={index < 2}
                             />
                         </div>
                     ))}
                 </div>
             </div>
-            {/* Image Preview Modal */}
+
+            {/* 🪞 Image Preview Modal */}
             <AnimatePresence>
                 {selectedImage && (
                     <motion.div
-                        className="fixed inset-0 bg-black/80 bg-opacity-50 flex items-center justify-center z-50"
+                        className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 backdrop-blur-sm"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -116,6 +123,7 @@ export default function ImageCarousel() {
                                 alt="Preview"
                                 fill
                                 className="object-contain rounded-lg"
+                                sizes="100vw"
                             />
                         </motion.div>
                     </motion.div>
