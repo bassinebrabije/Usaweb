@@ -4,29 +4,23 @@ const teamMembers = [
     {
         name: "Shruti Goel",
         role: "",
-        media: "https://streamable.com/e/hk245z?",
-        type: "streamable",
+        media: "https://streamable.com/e/hk245z",
     },
     {
         name: "Daniela Koumides",
         role: "MBA",
         media: "https://streamable.com/e/i5w6yk",
-        type: "streamable",
     },
     {
         name: "Daniela Koumides",
         role: "MBA",
-        media: "https://streamable.com/e/r7krs3?",
-        type: "streamable",
+        media: "https://streamable.com/e/r7krs3",
     },
-
     {
         name: "Marisela Riveros",
         role: "MBA",
-        media: "https://streamable.com/e/6cpxrq?",
-        type: "streamable",
+        media: "https://streamable.com/e/6cpxrq",
     },
-    // other members...
 ];
 
 export default function TeamSection() {
@@ -34,7 +28,7 @@ export default function TeamSection() {
         <div className="max-w-7xl px-4 py-5 sm:px-6 mx-auto">
             {/* Title */}
             <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-                <h2 className="text-4xl font-bold tracking-tight sm:leading-16 text-gray-800 sm:text-4xl lg:text-5xl">
+                <h2 className="text-4xl font-bold tracking-tight text-gray-800 sm:text-4xl lg:text-5xl">
                     What my clients say
                 </h2>
             </div>
@@ -44,29 +38,17 @@ export default function TeamSection() {
                 {teamMembers.map((member, index) => (
                     <div key={index} className="text-center">
                         {/* Video container */}
-                        <div className="mx-auto w-full max-w-[300px] h-0 pb-[177.77%] rounded-2xl overflow-hidden relative cursor-pointer">
-                            {member.type === "video" && (
-                                <video
-                                    src={member.media}
-                                    className="absolute top-0 left-0 w-full h-full object-cover"
-                                    loop
-                                    controls
-                                    playsInline
-                                    muted
-                                />
-                            )}
-
-                            {member.type === "streamable" && (
-                                <iframe
-                                    src={`${member.media}?autoplay=0`}
-                                    className="absolute top-0 left-0 w-full h-full"
-                                    allow="autoplay; fullscreen"
-                                    allowFullScreen
-                                    frameBorder="0"
-                                    loading="lazy"
-                                />
-                            )}
+                        <div className="relative mx-auto aspect-[9/16] w-full max-w-[300px] rounded-2xl overflow-hidden">
+                            <iframe
+                                src={`${member.media}?autoplay=0`}
+                                className="absolute top-0 left-0 w-full h-full"
+                                allow="autoplay; fullscreen"
+                                allowFullScreen
+                                frameBorder="0"
+                                loading="lazy"
+                            />
                         </div>
+
                         {/* Name and Role */}
                         <div className="mt-4 sm:mt-6">
                             <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
