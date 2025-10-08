@@ -44,7 +44,7 @@ export default function Hero() {
                     className="w-full lg:w-1/2 flex justify-center"
                 >
                     <img
-                        src="Aboutus/Dr.LoubnaErraiji.jpg"
+                        src="/Servicesimg/Dr.LoubnaErraji.png"
                         alt="Dr. Loubna Erraji"
                         width={150}
                         height={150}
