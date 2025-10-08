@@ -61,7 +61,7 @@ export default function Unlock() {
                 <div className="relative w-full p-3 rounded md:p-8">
                     <div className="rounded-lg bg-white text-black w-full">
                         <Image
-                            src="/home/Dr.LoubnaErraji.png" // note the leading slash
+                            src="/Home/Dr.LoubnaErraji.png" // note the leading slash
                             alt="Dr. Loubna Erraji"
                             width={600}
                             height={600}

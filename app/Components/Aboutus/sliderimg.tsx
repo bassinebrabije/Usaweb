@@ -5,12 +5,12 @@ import Image from "next/image";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 
 const images = [
-    "/Aboutus/sliderimg/1.png",
-    "/Aboutus/sliderimg/2.png",
-    "/Aboutus/sliderimg/3.jpg",
-    "/Aboutus/sliderimg/4.png",
-    "/Aboutus/sliderimg/5.webp",
-    "/Aboutus/sliderimg/6.jpg",
+    "/Aboutus/Sliderimg/1.png",
+    "/Aboutus/Sliderimg/2.png",
+    "/Aboutus/Sliderimg/3.jpg",
+    "/Aboutus/Sliderimg/4.png",
+    "/Aboutus/Sliderimg/5.webp",
+    "/Aboutus/Sliderimg/6.jpg",
 ];
 
 export default function ImageCarousel() {

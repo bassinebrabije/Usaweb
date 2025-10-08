@@ -43,7 +43,7 @@ export default function Weworkwith() {
                 <div className="relative w-full p-3 rounded md:p-8">
                     <div className="rounded-lg bg-white text-black w-full">
                         <Image
-                            src="/home/bEthJ6MKQ86bybqNFwoB_Profpic.png"
+                            src="/Home/bEthJ6MKQ86bybqNFwoB_Profpic.png"
                             alt="Professional Profile"
                             width={600}
                             height={600}
