@@ -107,11 +107,10 @@ export default function How() {
                             <button
                                 onClick={handleClose}
                                 aria-label="Close"
-                                className="absolute top-4 right-4 z-50 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                                className="absolute top-4 right-4 sm:top-2 sm:right-2 z-50  p-2 rounded-full  transition-colors"
                             >
                                 <X className="w-6 h-6 text-gray-700" />
                             </button>
-
                             {/* Left side */}
                             <div className="md:w-1/2 p-6 border-b md:border-b-0 md:border-r border-gray-200 flex-shrink-0 flex flex-col">
                                 <h3 className="mb-4 text-xl font-semibold text-[#cc1f23]">
@@ -135,14 +134,12 @@ export default function How() {
                                     />
                                 )}
                             </div>
-
                             {/* Right side */}
                             <div className="md:w-1/2 p-6 overflow-y-auto max-h-[90vh] flex flex-col">
                                 <h4 className="mb-3 text-lg font-semibold text-gray-800">{steps[activeStep].detailsTitle}</h4>
                                 <p className="mb-4 text-gray-700 text-sm sm:text-base whitespace-pre-line">
                                     {steps[activeStep].detailsText}
                                 </p>
-
                                 {steps[activeStep].Testimonialtext && (
                                     <div className="p-4 rounded-2xl mt-2 border border-gray-200">
                                         <figure className="md:flex max-w-5xl rounded-xl overflow-hidden items-center">
