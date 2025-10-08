@@ -44,7 +44,7 @@ export default function TeamSection() {
                 {teamMembers.map((member, index) => (
                     <div key={index} className="text-center">
                         {/* Video container */}
-                        <div className="mx-auto w-full max-w-[300px] h-0 pb-[177.77%] rounded-xl overflow-hidden relative cursor-pointer">
+                        <div className="mx-auto w-full max-w-[300px] h-0 pb-[177.77%] rounded-2xl overflow-hidden relative cursor-pointer">
                             {member.type === "video" && (
                                 <video
                                     src={member.media}
