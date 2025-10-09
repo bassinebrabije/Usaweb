@@ -19,35 +19,34 @@ export default function Executive() {
             <div className="flex flex-col-reverse lg:flex-row items-center lg:items-start gap-12 lg:gap-20">
                 {/* TEXT SECTION */}
                 <motion.div
-                    initial="hidden"
-                    whileInView="visible"
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 1 }}
                     className="w-full lg:w-1/2 text-gray-900 space-y-6"
                 >
-                    <motion.h1 variants={textVariants} className="mb-5 text-4xl font-extrabold text-gray-900 leading-tight">
+                    <h1 className="mb-5 text-4xl font-extrabold text-gray-900 leading-tight">
                         Business Coaching
-                    </motion.h1>
-                    <motion.p variants={textVariants} className="text-base font-medium text-gray-500 leading-relaxed mb-6 sm:mb-5">
+                    </h1>
+                    <p className="text-base font-medium text-gray-500 leading-relaxed mb-6 sm:mb-5">
                         Are you a high-achiever with an entrepreneurial drive, thinking about transitioning from your corporate job to start your own business OR taking your business to the next level?
-                    </motion.p>
-                    <motion.p variants={textVariants} className="text-base font-medium text-gray-500 leading-relaxed mb-6 sm:mb-5">
+                    </p>
+                    <p className="text-base font-medium text-gray-500 leading-relaxed mb-6 sm:mb-5">
                         I WILL HELP YOU:
-                    </motion.p>
-                    <motion.ul variants={textVariants} className="space-y-3 text-gray-500 list-disc list-inside mb-12">
+                    </p>
+                    <ul className="space-y-3 text-gray-500 list-disc list-inside mb-12">
                         <li>Explore new and innovative ideas and perspectives.</li>
                         <li>Identify your niche and target audience.</li>
                         <li>Discuss your business strategy and plan.</li>
                         <li>Define a clear brand identity & messaging.</li>
                         <li>Gain confidence and follow your dreams & business goals.</li>
-                    </motion.ul>
-
-                    <motion.a
-                        variants={textVariants}
+                    </ul>
+                    <a
                         href="#"
                         className="px-6 py-3 text-base font-bold text-center text-white bg-[#cc1f23] hover:scale-105 transition-transform rounded-xl"
                     >
                         FIND OUT MORE
-                    </motion.a>
+                    </a>
                 </motion.div>
 
                 {/* IMAGE SECTION */}

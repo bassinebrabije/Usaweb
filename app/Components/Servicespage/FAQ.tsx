@@ -1,6 +1,7 @@
 "use client";
 import * as React from "react";
 import { useState } from "react";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
@@ -33,7 +34,8 @@ The group coaching and training calls are 60-90 minutes.`,
     },
     {
         question: "Coaching Services Investment",
-        answer: "To inquire about the investment in Career coaching, Executive Coaching, Workshops, please connect with us.",
+        answer:
+            "To inquire about the investment in Career coaching, Executive Coaching, Workshops, please connect with us.",
     },
     {
         question: "LEADERSHIP PROGRAMS INCLUDE...",
@@ -95,55 +97,79 @@ const FAQAccordion: React.FC = () => {
         return elements;
     };
 
+    // ✅ Typed Variants (this removes the red underline)
+    const imageVariants: Variants = {
+        hidden: { opacity: 0, y: 40 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.8, ease: "easeOut" },
+        },
+    };
+
     return (
         <section className="py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row justify-between items-center gap-x-16 gap-y-10 xl:gap-28 max-lg:max-w-2xl mx-auto max-w-full">
-                    {/* Left Image */}
-                    <div className="w-full lg:w-1/2  hidden sm:block">
+                    {/* ✅ Left Image with working motion animation */}
+                    <motion.div
+                        className="w-full lg:w-1/2 hidden sm:block"
+                        variants={imageVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                    >
                         <Image
                             src="/Servicesimg/1696230182.png"
                             alt="FAQ section"
                             width={600}
                             height={500}
-                            className="w-full rounded-xl object-cover"
+                            className="w-full rounded-xl object-cover shadow-lg"
                         />
-                    </div>
+                    </motion.div>
 
                     {/* Right FAQ */}
-                    <div className="w-full lg:w-1/2">
-                        <div className="lg:max-w-xl">
-
-
-                            <div className="space-y-4">
-                                {faqs.map((faq, index) => (
-                                    <div
-                                        key={index}
-                                        className={`border border-gray-200 rounded-xl overflow-hidden  transition-all duration-300 ${openIndex === index ? "bg-gray-50" : "bg-white"
-                                            }`}
+                    <motion.div
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 1 }}
+                        className="w-full lg:w-1/2"
+                    >
+                        <div className="lg:max-w-xl space-y-4">
+                            {faqs.map((faq, index) => (
+                                <div
+                                    key={index}
+                                    className={`border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 ${openIndex === index ? "bg-gray-50" : "bg-white"
+                                        }`}
+                                >
+                                    <button
+                                        onClick={() => toggle(index)}
+                                        className="w-full flex justify-between items-center px-6 py-5 text-left"
                                     >
-                                        <button
-                                            onClick={() => toggle(index)}
-                                            className="w-full flex justify-between    items-center px-6 py-5 text-left"
+                                        <span className="text-lg font-semibold text-gray-900">
+                                            {faq.question}
+                                        </span>
+                                        <ChevronDownIcon
+                                            className={`w-6 h-6 text-[#cc1f23] transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
+                                                }`}
+                                        />
+                                    </button>
+                                    {openIndex === index && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: "auto" }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="px-6 pb-6 text-gray-700"
                                         >
-                                            <span className="text-lg font-semibold text-gray-900">
-                                                {faq.question}
-                                            </span>
-                                            <ChevronDownIcon
-                                                className={`w-6 h-6 text-[#cc1f23] transition-transform duration-300 ${openIndex === index ? "rotate-180 " : ""
-                                                    }`}
-                                            />
-                                        </button>
-                                        {openIndex === index && (
-                                            <div className="px-6 pb-6 text-gray-700">
-                                                {renderAnswer(faq.answer)}
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
+                                            {renderAnswer(faq.answer)}
+                                        </motion.div>
+                                    )}
+                                </div>
+                            ))}
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
