@@ -59,7 +59,7 @@ export default function Home() {
                 className="w-full max-w-4xl mx-auto mt-12"
             >
                 <img
-                    src="home/usabg.png"
+                    src="Home/Herobg.png"
                     alt="Hero Background Image"
                     loading="lazy"
                     className="w-full border border-gray-300 rounded-3xl object-cover h-[250px] sm:h-[400px] md:h-[500px]"
