@@ -13,6 +13,7 @@ import Executive from "../Components/Servicespage/Executive";
 import Business from "../Components/Servicespage/Business";
 import Wanttolearn from "../Components/Servicespage/Wanttolearn";
 import FAQ from "../Components/Servicespage/FAQ";
+import SocialFloatingButtons from "../Components/Contact";
 
 
 const Services = () => {
@@ -25,6 +26,7 @@ const Services = () => {
             <Business />
             <Wanttolearn />
             <FAQ />
+            <SocialFloatingButtons />
             <Footer />
         </>
     );

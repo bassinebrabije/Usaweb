@@ -20,6 +20,7 @@ import SocialFloatingButtons from "../Components/Contact";
 
 
 
+
 const Home = () => {
     return (
         < >
@@ -27,8 +28,9 @@ const Home = () => {
             <Hero />
             <Client />
             <Unlock />
-            <How />
             <Putitall />
+            <How />
+
             <Blog />
             <Wanttoempower />
             <Testimonial />

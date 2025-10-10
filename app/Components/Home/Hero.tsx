@@ -13,6 +13,7 @@ export default function Home() {
                     On-Demand Transformative Executive and Career Coaching
                 </span>
             </motion.div>
+
             <motion.h1
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -23,17 +24,6 @@ export default function Home() {
                 Elevating Performance.<br />
                 Driving Results.
             </motion.h1>
-
-            {/* Optional subtext */}
-            {/* <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2 }}
-                className="mb-10 text-base font-normal text-gray-500 lg:px-24 xl:px-60 mx-auto"
-            >
-                Individuals & Teams: Get Practical tools & frameworks to enhance
-                your mindset & perform  <br /> at full potential.
-            </motion.p> */}
 
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -49,17 +39,14 @@ export default function Home() {
                 </a>
             </motion.div>
 
-            <motion.iframe
+            <motion.img
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.6 }}
-                className="w-full max-w-4xl mx-auto mt-12 border border-gray-300 shadow-2xl rounded-3xl h-[500px]"
-                src="https://www.youtube.com/embed/LmnluYPT4e8?si=IHpzOswuwpgR03g2&amp;controls=0"
-                title="YouTube video player"
-                frameBorder={0}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-            ></motion.iframe>
+                className="w-full max-w-4xl mx-auto mt-12 border border-gray-300 rounded-3xl object-cover h-[250px] sm:h-[400px] md:h-[500px]"
+                src="home/usabg.png"
+                alt="Coaching illustration"
+            />
         </section>
     );
 }

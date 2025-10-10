@@ -50,6 +50,7 @@ const Wanttolearn = () => {
 
                             CONNECT WITH US
                         </a>
+
                     </motion.div>
                 </div>
             </motion.div>

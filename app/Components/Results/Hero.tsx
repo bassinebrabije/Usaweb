@@ -22,12 +22,10 @@ export default function Results() {
                     <p className="text-base mb-12 text-gray-500 font-medium leading-relaxed">
                         Get ready to be inspired to level up your career and unleash your full potential. Our clients work at Fortune 500 and leading institutions.
                     </p>
-
                     <a
                         href=""
-                        className="px-6 py-3 text-sm sm:text-base font-bold text-center text-white bg-[#cc1f23] hover:scale-105 rounded-xl"
+                        className="inline-block px-6 py-3 text-base font-bold text-center text-white bg-[#cc1f23] rounded-xl transform transition-transform duration-300 hover:scale-105"
                     >
-
                         5 SECRETS TO UNLOCK YOUR DREAM CAREER
                     </a>
 

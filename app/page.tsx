@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Homee from "./Home/page";
 
+
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
 
@@ -49,6 +50,7 @@ export default function Home() {
   return (
     <>
       <Homee />
+
     </>
   );
 }

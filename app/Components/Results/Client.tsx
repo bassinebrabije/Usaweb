@@ -4,8 +4,11 @@ export default function TrustedBy() {
     const logos = [
         { src: "/OurClient/AbbVie-logo.png", alt: "AbbVie-logo" },
         { src: "/OurClient/HarvardMedicalSchool.png", alt: "HarvardMedicalSchool" },
+        { src: "/OurClient/um6p.png", alt: "um6p" },
         { src: "/OurClient/Merck.png", alt: "Merck" },
+        { src: "/OurClient/Attijariwafabank.png", alt: "Attijariwafabank" },
         { src: "/OurClient/bristol-myers-squibb.png", alt: "bristol-myers-squibb" },
+        { src: "/OurClient/banquepopulaire.png", alt: "banquepopulaire" },
         { src: "/OurClient/cigna.png", alt: "cigna" },
         { src: "/OurClient/alkermes.png", alt: "alkermes" },
         { src: "/OurClient/allergan.png", alt: "allergan" },

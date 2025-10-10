@@ -65,8 +65,8 @@ const IndividualCareer = () => {
                     </motion.ul>
                     <div className="mt-10 mb-10" >
                         <a
-                            href="#book-demo"
-                            className="px-6 py-3   text-xs sm:text-base font-bold text-center text-[#cc1f23]  bg-white  rounded-xl "
+                            href=""
+                            className="inline-block px-6 py-3 text-base font-bold text-center text-[#cc1f23]  bg-white  rounded-xl transform transition-transform duration-300 hover:scale-105"
                         >
                             BOOK A CAREER CLARITY CALL
                         </a>

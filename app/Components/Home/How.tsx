@@ -11,8 +11,24 @@ export default function How() {
 
     // Lock body scroll when modal is open
     useEffect(() => {
-        document.body.style.overflow = open ? "hidden" : "";
+        if (open) {
+            // Save the current scroll position
+            const scrollY = window.scrollY;
+            document.body.style.position = "fixed";
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.left = "0";
+            document.body.style.right = "0";
+        } else {
+            // Restore scroll position
+            const scrollY = document.body.style.top;
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.left = "";
+            document.body.style.right = "";
+            window.scrollTo(0, parseInt(scrollY || "0") * -1);
+        }
     }, [open]);
+
 
     const handleOpen = (idx: number) => {
         setActiveStep(idx);
@@ -107,7 +123,7 @@ export default function How() {
                             <button
                                 onClick={handleClose}
                                 aria-label="Close"
-                                className="absolute top-4 right-4 sm:top-2 sm:right-2 z-50  p-2 rounded-full  transition-colors"
+                                className="absolute top-4 right-4 sm:top-2 sm:right-2 z-50  p-2 rounded-full  transition-colors cursor-pointer "
                             >
                                 <X className="w-6 h-6 text-gray-700" />
                             </button>

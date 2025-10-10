@@ -12,6 +12,7 @@ import Interviews from "../Components/Aboutus/Interviews";
 import Book from "../Components/Aboutus/book";
 import Howigot from "../Components/Aboutus/Howigot";
 import Wanttosee from "../Components/Aboutus/Wanttosee";
+import SocialFloatingButtons from "../Components/Contact";
 const About = () => {
     return (
         < >
@@ -22,6 +23,7 @@ const About = () => {
             <Book />
             <Howigot />
             <Wanttosee />
+            <SocialFloatingButtons />
             <Footer />
         </>
     );

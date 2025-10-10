@@ -3,6 +3,7 @@
 import React from "react";
 import Header from "../Components/Layout/Header";
 import Footer from "../Components/Layout/Footer";
+import SocialFloatingButtons from "../Components/Contact";
 
 const TermsOfService = () => {
     const today = new Date();
@@ -82,6 +83,7 @@ const TermsOfService = () => {
                     </p>
                 </div>
             </div>
+            <SocialFloatingButtons />
             <Footer />
         </>
     );

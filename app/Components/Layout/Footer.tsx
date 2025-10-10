@@ -31,7 +31,7 @@ export default function Footer() {
                     {/* Use href instead of to */}
                     <Link href="/Terms">Terms</Link>
                     <div className="h-4 w-px bg-slate-500/20"></div>
-                    <Link href="/">Powered by Brabije Yassine</Link>
+                    <Link href="/">Created by Brabije Yassine</Link>
                 </div>
             </div>
         </footer>
