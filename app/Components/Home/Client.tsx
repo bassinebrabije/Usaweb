@@ -1,56 +1,88 @@
+'use client';
+
 import { motion } from "framer-motion";
 
 export default function TrustedBy() {
     const logos = [
-        { src: "/OurClient/AbbVie-logo.png", alt: "AbbVie-logo" },
-        { src: "/OurClient/HarvardMedicalSchool.png", alt: "HarvardMedicalSchool" },
-        { src: "/OurClient/um6p.png", alt: "um6p" },
-        { src: "/OurClient/Merck.png", alt: "Merck" },
-        { src: "/OurClient/Attijariwafabank.png", alt: "Attijariwafabank" },
-        { src: "/OurClient/bristol-myers-squibb.png", alt: "bristol-myers-squibb" },
-        { src: "/OurClient/banquepopulaire.png", alt: "banquepopulaire" },
-        { src: "/OurClient/cigna.png", alt: "cigna" },
-        { src: "/OurClient/alkermes.png", alt: "alkermes" },
-        { src: "/OurClient/allergan.png", alt: "allergan" },
-        { src: "/OurClient/Amicus.png", alt: "Amicus" },
-        { src: "/OurClient/eisai.png", alt: "eisai" },
-        { src: "/OurClient/Mallinckrodt.png", alt: "Mallinckrodt" },
-        { src: "/OurClient/weill.png", alt: "weill" },
-        { src: "/OurClient/rutgers-university.png", alt: "rutgers-university" },
-        { src: "/OurClient/Rwj.png", alt: "Rwj" },
-        { src: "/OurClient/johns.png", alt: "johns" },
-        { src: "/OurClient/hackensack.png", alt: "hackensack" },
-        { src: "/OurClient/Fresenius_Medical_Care_logo.png", alt: "Fresenius_Medical_Care_logo" },
-        { src: "/OurClient/PM_Pediatric.png", alt: "PM_Pediatric" },
-        { src: "/OurClient/Catalent.png", alt: "Catalent" },
-        { src: "/OurClient/Virtua.png", alt: "Virtua" },
-        { src: "/OurClient/idcare.png", alt: "idcare" },
+        { src: "/OurClient/AbbVie-logo.png", alt: "AbbVie – Global Biopharmaceutical Company" },
+        { src: "/OurClient/HarvardMedicalSchool.png", alt: "Harvard Medical School – Leading Medical Education Institution" },
+        { src: "/OurClient/um6p.png", alt: "Mohammed VI Polytechnic University – Higher Education and Research" },
+        { src: "/OurClient/Merck.png", alt: "Merck – Life Sciences and Healthcare Company" },
+        { src: "/OurClient/Attijariwafabank.png", alt: "Attijariwafa Bank – Banking and Financial Services" },
+        { src: "/OurClient/bristol-myers-squibb.png", alt: "Bristol Myers Squibb – Biopharmaceuticals and Oncology" },
+        { src: "/OurClient/banquepopulaire.png", alt: "Banque Populaire – Retail Banking Institution" },
+        { src: "/OurClient/cigna.png", alt: "Cigna – Health Insurance and Services" },
+        { src: "/OurClient/alkermes.png", alt: "Alkermes – Pharmaceutical Research Company" },
+        { src: "/OurClient/allergan.png", alt: "Allergan – Global Pharmaceutical Company" },
+        { src: "/OurClient/Amicus.png", alt: "Amicus Therapeutics – Biotechnology and Rare Diseases" },
+        { src: "/OurClient/eisai.png", alt: "Eisai – Human Health Care Pharmaceutical Company" },
+        { src: "/OurClient/Mallinckrodt.png", alt: "Mallinckrodt Pharmaceuticals – Specialty Pharmaceuticals" },
+        { src: "/OurClient/weill.png", alt: "Weill Cornell Medicine – Medical Education and Research" },
+        { src: "/OurClient/rutgers-university.png", alt: "Rutgers University – Leading Research University" },
+        { src: "/OurClient/Rwj.png", alt: "RWJ Barnabas Health – Healthcare Network" },
+        { src: "/OurClient/johns.png", alt: "Johns Hopkins – Research and Medical Institution" },
+        { src: "/OurClient/hackensack.png", alt: "Hackensack Meridian Health – Healthcare Organization" },
+        { src: "/OurClient/Fresenius_Medical_Care_logo.png", alt: "Fresenius Medical Care – Dialysis and Healthcare Services" },
+        { src: "/OurClient/PM_Pediatric.png", alt: "PM Pediatrics – Pediatric Urgent Care" },
+        { src: "/OurClient/Catalent.png", alt: "Catalent – Pharmaceutical Manufacturing Solutions" },
+        { src: "/OurClient/Virtua.png", alt: "Virtua Health – Healthcare and Hospital Services" },
+        { src: "/OurClient/idcare.png", alt: "ID Care – Infectious Disease Specialists" },
     ];
 
-    // Duplicate logos for seamless infinite effect
-    const allLogos = [...logos, ...logos];
+    // Double the logos for continuous loop effect
+    const repeatedLogos = [...logos, ...logos];
 
     return (
-        <section className="relative pt-10 sm:pt-20 flex flex-col items-center mb-5">
-            <p className="text-center text-base text-[#6b7280] mb-10 sm:mb-12 w-auto px-4 max-w-3xl">
-                Our clients are directors, VPs, senior leaders, and executives in all industries
-                (pharma, healthcare, life sciences, higher education, banking, telecommunications, etc.)
+        <section
+            id="trusted-by"
+            aria-label="Trusted by leading global organizations and institutions"
+            className="relative flex flex-col items-center pt-10 sm:pt-20 mb-10 overflow-hidden"
+        >
+            {/* Section heading for SEO */}
+            <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center hidden"
+            >
+                Trusted by Global Leaders and Institutions
+            </motion.h2>
+
+            {/* Description paragraph */}
+            <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="text-center text-base sm:text-lg text-gray-600 mb-10 sm:mb-12 w-auto px-4 max-w-3xl"
+            >
+                Our clients are directors, VPs, senior leaders, and executives in all industries <strong> pharma,
+                    healthcare, life sciences, higher education, banking, telecommunications, </strong> and more..
                 driving growth through high-performing teams and cultures.
-            </p>
-            <div className="max-w-6xl w-full overflow-hidden ">
+            </motion.p>
+
+            {/* Logo marquee wrapper */}
+            <div className="w-full max-w-6xl overflow-hidden relative">
                 <motion.div
-                    className="flex items-center" // center vertically
+                    className="flex items-center gap-8"
                     style={{ width: "max-content" }}
                     animate={{ x: ["0%", "-50%"] }}
                     transition={{
                         repeat: Infinity,
                         repeatType: "loop",
-                        duration: 80,
+                        duration: 60, // ⏳ Smooth speed
                         ease: "linear",
                     }}
+                    role="list"
+                    aria-label="Logos of trusted client organizations"
                 >
-                    {allLogos.map((logo, idx) => (
-                        <div key={idx} className="px-4 flex items-center cursor-pointer"> {/* use px-4 instead of pl-8 */}
+                    {repeatedLogos.map((logo, idx) => (
+                        <motion.div
+                            key={idx}
+                            className="flex items-center justify-center px-4 sm:px-6"
+                            whileHover={{ scale: 1.05 }}
+                        >
                             <img
                                 src={logo.src}
                                 alt={logo.alt}
@@ -58,13 +90,16 @@ export default function TrustedBy() {
                                 height={150}
                                 loading="lazy"
                                 decoding="async"
-                                className="h-auto  sm:filter sm:grayscale hover:grayscale-0 transition duration-300"
+                                className="h-auto w-auto max-h-[40px] sm:max-h-[50px] object-contain grayscale hover:grayscale-0 transition duration-300"
                             />
-                        </div>
+                        </motion.div>
                     ))}
                 </motion.div>
+
+                {/* Optional subtle gradient fade on edges for aesthetic */}
+                <div className="pointer-events-none absolute top-0 left-0 w-24 sm:w-40 h-full bg-gradient-to-r from-white to-transparent" />
+                <div className="pointer-events-none absolute top-0 right-0 w-24 sm:w-40 h-full bg-gradient-to-l from-white to-transparent" />
             </div>
         </section>
-
     );
 }
