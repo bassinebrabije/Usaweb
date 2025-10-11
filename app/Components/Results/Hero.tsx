@@ -28,7 +28,6 @@ export default function Results() {
                     >
                         5 SECRETS TO UNLOCK YOUR DREAM CAREER
                     </a>
-
                 </motion.div>
 
                 {/* IMAGE SECTION */}

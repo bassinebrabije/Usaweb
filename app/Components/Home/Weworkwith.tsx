@@ -23,7 +23,7 @@ export default function Weworkwith() {
 
                     <div className="mt-8 sm:flex md:mt-10">
                         <a
-                            href="#"
+                            href="https://calendly.com/loubnaerraji/strategy-call?month=2025-10" target="_blank" rel="noopener noreferrer"
                             className="px-6 py-3 text-xs sm:text-base font-bold text-center text-white bg-[#cc1f23] hover:scale-105 rounded-xl"
                         >
                             CHECK IF THIS IS FOR YOU & HOW WE CAN HELP
@@ -31,7 +31,6 @@ export default function Weworkwith() {
                     </div>
                 </div>
             </motion.div>
-
             {/* Right Image */}
             <motion.div
                 initial={{ opacity: 0, x: 60 }}

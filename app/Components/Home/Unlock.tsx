@@ -48,7 +48,7 @@ export default function Unlock() {
                         </ul>
                         <div className="mt-8 sm:flex md:mt-10">
                             <a
-                                href="#"
+                                href="https://calendly.com/loubnaerraji/strategy-call?month=2025-10" target="_blank" rel="noopener noreferrer"
                                 className="px-6 py-3 text-xs sm:text-base font-bold text-center text-white bg-[#cc1f23] hover:scale-105 rounded-xl"
                             >
                                 Step into your next level of leadership and life.
