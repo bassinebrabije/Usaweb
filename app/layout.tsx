@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "On-demand executive and career coaching for leaders. We help you elevate performance, drive measurable results, and unlock your full potential. Start your transformation.",
     images: [
       {
-        url: "https://i.ibb.co/xS9LXZzF/logo.png",
+        url: "https://i.ibb.co/RGrgN99K/logo.png",
         width: 1200,
         height: 630,
         alt: "Advancis Consulting Logo",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Advancis Consulting - Biopharma Executive Coaching",
     description:
       "On-demand executive and career coaching for leaders. We help you elevate performance, drive measurable results, and unlock your full potential. Start your transformation.",
-    images: ["https://i.ibb.co/xS9LXZzF/logo.png"],
+    images: ["https://i.ibb.co/RGrgN99K/logo.png"],
   },
 };
 
