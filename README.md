@@ -34,3 +34,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+--
+
+## Project organization (added notes)
+
+Small, safe reorganizations were added to improve developer DX:
+
+- `app/Components/index.ts` — barrel file that re-exports common components for simpler imports.
+- `.editorconfig` — basic editor settings for consistent formatting.
+- `app/not-found.tsx` and `public/404.svg` — not found page and illustration.
+
+Usage example:
+
+```ts
+import { Header, Footer } from "./app/Components";
+```
+
+If you'd like more reorganization (per-folder barrels, move to `src/`, or stricter linting), tell me which approach you prefer and I will implement it.
