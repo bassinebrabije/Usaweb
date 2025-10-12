@@ -35,7 +35,7 @@ export default function TeamSection() {
     const [activeVideo, setActiveVideo] = useState<number | null>(null);
 
     return (
-        <div className="max-w-7xl px-4 py-5 sm:px-6 mx-auto">
+        <div className="max-w-7xl px-4 py-5 sm:px-6 mx-auto mb-16">
             {/* Title */}
             <motion.div
                 className="max-w-2xl mx-auto text-center mb-10 lg:mb-14"

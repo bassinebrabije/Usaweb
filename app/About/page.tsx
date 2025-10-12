@@ -3,7 +3,7 @@
 
 import React from "react";
 
-import Hero from "../Components/Aboutus/Hero";
+import Aboutdr from "../Components/Aboutus/about";
 import Header from "../Components/Layout/Header";
 import Footer from "../Components/Layout/Footer";
 
@@ -13,11 +13,14 @@ import Book from "../Components/Aboutus/book";
 import Howigot from "../Components/Aboutus/Howigot";
 import Wanttosee from "../Components/Aboutus/Wanttosee";
 import SocialFloatingButtons from "../Components/Contact";
+import Hero from "../Components/Aboutus/Hero";
+
 const About = () => {
     return (
         < >
             <Header />
             <Hero />
+            <Aboutdr />
             <Sliderimg />
             <Interviews />
             <Book />

@@ -57,9 +57,8 @@ export default function TrustedBy() {
                 transition={{ duration: 1 }}
                 className="text-center text-base sm:text-lg text-gray-600 mb-10 sm:mb-12 w-auto px-4 max-w-3xl"
             >
-                Our clients are directors, VPs, senior leaders, and executives in all industries <strong> pharma,
-                    healthcare, life sciences, higher education, banking, telecommunications, </strong> and more..
-                driving growth through high-performing teams and cultures.
+                Real-time coaching for executives and decision-makers ready to move fast, lead
+                smarter, and take leadership to the next level — without wasting time.
             </motion.p>
 
             {/* Logo marquee wrapper */}
@@ -100,6 +99,17 @@ export default function TrustedBy() {
                 <div className="pointer-events-none absolute top-0 left-0 w-24 sm:w-40 h-full bg-gradient-to-r from-white to-transparent" />
                 <div className="pointer-events-none absolute top-0 right-0 w-24 sm:w-40 h-full bg-gradient-to-l from-white to-transparent" />
             </div>
+            {/* Description paragraph */}
+            <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="text-center text-base sm:text-lg text-gray-600 mt-10 sm:mt-12 w-auto px-4 max-w-3xl"
+            >
+                Our clients are directors, VPs, senior leaders, and executives in all industries <strong> Pharma,
+                    healthcare, life sciences, higher education, Banking, Telecommunications, etc.</strong>
+            </motion.p>
         </section>
     );
 }

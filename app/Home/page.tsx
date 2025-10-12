@@ -30,11 +30,10 @@ const Home = () => {
             <Unlock />
             <Putitall />
             <How />
-
-            <Blog />
+            {/* <Blog /> */}
             <Wanttoempower />
             <Testimonial />
-            <Weworkwith />
+            {/* <Weworkwith /> */}
             <SocialFloatingButtons />
             {/* <Message /> */}
             <Footer />

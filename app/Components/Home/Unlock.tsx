@@ -30,13 +30,12 @@ export default function Unlock() {
                 >
                     <div className="text-left">
                         <p className="mt-4 text-base text-gray-500">
-                            Our executive and career coaching empowers you to think boldly, lead strategically, and achieve what once felt out of reach.
-                        </p>
+                            Our executive and career coaching empowers you to think boldly, lead strategically, and achieve what once felt out of reach.                        </p>
                         <p className="mt-4 text-base text-gray-500">
                             <span className="font-bold text-[#cc1f23]">Since 2016</span>, we've guided hundreds of professionals through meaningful growth and lasting transformation.
                         </p>
                         <p className="mt-4 text-base text-gray-500">
-                            We believe you already have the capacity to perform at a higher level—our role is to help you access it. Through personalized coaching, we empower clients to:
+                            We believe you already have the capacity to perform at a higher level—our role is to help you access it.
                         </p>
                         <p className="mt-4 text-base text-gray-500">
                             Through personalized coaching, we empower clients to :

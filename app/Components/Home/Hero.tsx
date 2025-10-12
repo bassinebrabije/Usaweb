@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -10,46 +11,45 @@ export default function Home() {
             aria-label="On-Demand Executive and Career Coaching"
         >
             {/* Intro line */}
-            <motion.div
-                initial={{ opacity: 0, y: -30 }}
+            <motion.header initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="inline-block px-1 py-1 mb-2 sm:mb-5 text-gray-900"
-            >
-                <p className="text-base text-gray-900 font-bold">
-                    On-Demand Transformative Executive and Career Coaching
-                </p>
-            </motion.div>
-
-            {/* Main headline */}
-            <motion.h1
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                className="mb-10 text-3xl sm:text-6xl font-extrabold text-gray-900 leading-tight"
-            >
-                Empowering Leaders.
-                <br />
-                Elevating Performance.
-                <br />
-                Driving Results.
-            </motion.h1>
-
-            {/* CTA button */}
-            <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.4 }}
-                className="flex justify-center mb-8"
-            >
-                <a
-                    href="/corporations"
-                    aria-label="Learn more about corporate coaching programs"
-                    className="px-6 py-3 text-base font-bold text-center text-white bg-[#cc1f23] hover:scale-105 transition-transform rounded-xl focus:outline-none focus:ring-4 focus:ring-red-300"
+                transition={{ duration: 0.8 }}>
+                <div
+                    className="inline-block px-1 py-1 mb-2 sm:mb-5 text-gray-900"
                 >
-                    CORPORATIONS – LEARN MORE
-                </a>
-            </motion.div>
+                    <h2 className="text-base text-gray-900 font-bold">
+                        On-Demand Transformative Executive and Career Coaching
+                    </h2>
+                </div>
+
+                {/* Main headline */}
+                <h1
+                    className="mb-8 text-3xl sm:text-6xl font-extrabold text-gray-900 leading-tight"
+                >
+                    Empowering Leaders.
+                    <br />
+                    Elevating Performance.
+                    <br />
+                    Driving Results.
+                </h1>
+                <p
+                    className="inline-block px-1 py-1 sm:mb-10 text-gray-500 font-bold text-base"
+                >
+                    When the stakes are high, your growth can’t wait.
+                </p>
+                {/* CTA button */}
+                <div
+                    className="flex justify-center mb-8"
+                >
+                    <Link
+                        href="/Results"
+                        aria-label="See What’s Possible: Success Stories"
+                        className="px-6 py-3 text-base font-bold text-center text-white bg-[#cc1f23] hover:scale-105 transition-transform rounded-xl focus:outline-none "
+                    >
+                        See What’s Possible: Success Stories
+                    </Link>
+                </div>
+            </motion.header>
 
             {/* Hero image */}
             <motion.figure
@@ -60,7 +60,7 @@ export default function Home() {
             >
                 <img
                     src="Home/Herobg.png"
-                    alt="Hero Background Image"
+                    alt="Executive and career coaching for leaders"
                     loading="lazy"
                     className="w-full border border-gray-300 rounded-3xl object-cover h-[250px] sm:h-[400px] md:h-[500px]"
                 />

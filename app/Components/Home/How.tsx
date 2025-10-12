@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react"; // ✅ close icon
 import steps from './steps.json';
+import Link from "next/link";
 
 export default function How() {
     const [open, setOpen] = useState(false);
@@ -44,33 +45,16 @@ export default function How() {
         <section className="pb-20">
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mt-10">
                 <div className="mb-16 text-center">
-                    <motion.h2
+                    <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
-                        className="mb-4 text-2xl font-bold tracking-tight sm:leading-16 text-gray-800 sm:text-4xl lg:text-5xl"
+                        className="mb-4 text-2xl font-bold tracking-tight sm:leading-16 text-gray-800 sm:text-5xl max-w-6xl mx-auto"
                     >
-                        How "Unlock Your Dream Career" <br /> program can help :
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7, delay: 0.2 }}
-                        className="max-w-3xl mx-auto text-lg leading-relaxed text-gray-900 sm:text-xl"
-                    >
-                        The program is based on a <span className="text-[#cc1f23] font-bold">6-step</span> method used by high-achieving executives to define, plan, and attract their <span className="text-[#cc1f23] font-bold">next career opportunities.</span>
-                    </motion.p>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7, delay: 0.2 }}
-                        className="max-w-3xl mx-auto text-lg leading-relaxed text-gray-900 sm:text-xl pt-3.5"
-                    >
-                        Get <span className="text-[#cc1f23] font-bold">seen and recognized</span> as an impact-driving thought leader, while <span className="text-[#cc1f23] font-bold">earning 20% more</span>.
-                    </motion.p>
+                        Our program helps you position yourself as a high-impact
+                        leader and attract the career you actually want — in 90 days or less.
+                    </motion.h1>
                 </div>
 
                 {/* Step grid */}
@@ -100,7 +84,6 @@ export default function How() {
                     ))}
                 </div>
             </div>
-
             {/* Modal */}
             <AnimatePresence>
                 {open && activeStep !== null && (
@@ -108,7 +91,7 @@ export default function How() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+                        className="fixed inset-0 z-99 flex items-center justify-center bg-black/70 p-4"
                         onClick={handleClose}
                     >
                         <motion.div
@@ -132,16 +115,6 @@ export default function How() {
                                 <h3 className="mb-4 text-xl font-semibold text-[#cc1f23]">
                                     Step {activeStep + 1} : {steps[activeStep].title}
                                 </h3>
-                                <div className="aspect-video w-full rounded-lg overflow-hidden mb-4">
-                                    <iframe
-                                        src={steps[activeStep].videoUrl}
-                                        title="YouTube video"
-                                        frameBorder={0}
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowFullScreen
-                                        className="w-full h-full"
-                                    ></iframe>
-                                </div>
                                 {steps[activeStep].imgUrl && (
                                     <img
                                         src={steps[activeStep].imgUrl}
@@ -166,7 +139,7 @@ export default function How() {
                                             />
                                             <div className="pt-4 md:pt-0 md:pl-6 text-center md:text-left flex flex-col justify-center space-y-2 md:w-3/4">
                                                 <blockquote className="w-full">
-                                                    <p className="text-sm sm:text-base font-medium text-gray-800">
+                                                    <p className="text-sm italic sm:text-base font-medium text-gray-800">
                                                         {steps[activeStep].Testimonialtext}
                                                     </p>
                                                 </blockquote>

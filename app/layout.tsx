@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
+
 // Import Poppins font
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -10,14 +11,14 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Advancis Consulting - Biopharma Executive Coaching",
+  title: "Advancis Consulting - Executive & Career Coaching",
   description:
     "On-demand executive and career coaching for leaders. We help you elevate performance, drive measurable results, and unlock your full potential. Start your transformation.",
   metadataBase: new URL("https://advancisconsulting.com"), // <-- replace with your real domain
   openGraph: {
     type: "website",
     url: "https://advancisconsulting.com",
-    title: "Advancis Consulting - Biopharma Executive Coaching",
+    title: "Advancis Consulting -  Executive & Career Coaching",
     description:
       "On-demand executive and career coaching for leaders. We help you elevate performance, drive measurable results, and unlock your full potential. Start your transformation.",
     images: [
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Advancis Consulting - Biopharma Executive Coaching",
+    title: "Advancis Consulting - Executive & Career Coaching",
     description:
       "On-demand executive and career coaching for leaders. We help you elevate performance, drive measurable results, and unlock your full potential. Start your transformation.",
     images: ["https://i.ibb.co/RGrgN99K/logo.png"],

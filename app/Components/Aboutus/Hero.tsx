@@ -1,56 +1,50 @@
+'use client';
+
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-export default function Hero() {
+export default function Home() {
     return (
-        <section className="px-4 mx-auto max-w-7xl mt-[9rem] sm:mt-[11rem]">
-
-
-            {/* Flex Layout for Text + Image */}
-            <div className="flex flex-col-reverse lg:flex-row items-center lg:items-start gap-12 lg:gap-20">
-                {/* TEXT SECTION */}
-                <motion.div
-                    initial={{ opacity: 0, x: -40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
-                    className="w-full lg:w-1/2 text-gray-900"
+        <section
+            id="executive-career-coaching"
+            className="px-4 mx-auto max-w-7xl mt-[9rem] sm:mt-[11rem] text-center"
+            aria-label="On-Demand Executive and Career Coaching"
+        >
+            {/* Intro line */}
+            <motion.header initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}>
+                {/* Main headline */}
+                <h1
+                    className="mb-5 text-3xl sm:text-6xl font-extrabold text-gray-900 leading-tight"
                 >
-                    <h1 className="mb-10 text-3xl sm:text-6xl font-extrabold text-gray-900 leading-tight ">    DR. LOUBNA   ERRAJI'S BIO</h1>
-                    <p className="text-base  text-gray-500 font-medium leading-relaxed mb-4">
-                        Dr. Erraji is a neuroscientist, adjunct Professor, author, motivational speaker, and an ICF-certified Executive Coach with 20+ years of global & extensive experience encompassing research, teaching, consulting, advising, and coaching executives.
-                    </p>
-                    <p className="text-base    text-gray-500 font-medium leading-relaxed mb-4">
-                        Based out of New York City / New Jersey and frequently traveling abroad, her work has spanned the globe across the USA, Europe, and Africa. Her clients are leaders at Fortune 500 companies in healthcare, banking, technology, and more, working for the likes of Merck, BMS, AbbVie, UBS, Prudential, IBM, Deloitte, to name a few.
-                    </p>
-                    <p className="text-base   text-gray-500 font-medium leading-relaxed mb-4">
-                        Dr. Erraji offers that missing ingredient that executives need to keep advancing their career, operating at full potential and empowering their teams.
-                    </p>
-                    <p className="text-base  text-gray-500 font-medium leading-relaxed mb-4">
-                        She earned a Ph.D. at René Descartes University, Paris, France, in Pharmacology, an MBA in Pharmaceutical Management and Marketing at Rutgers University, Newark, and did her post-doctorate training in Neuroscience and Genomics at Columbia University, NY.
-                    </p>
-                    <p className="text-base  text-gray-500 font-medium leading-relaxed">
-                        Being a career switcher and an ambitious professional herself, Loubna is known to work best with other ambitious and high-achieving professionals who are committed to their success no matter what and want to take their next steps with confidence.
-                    </p>
-
-                </motion.div>
-
-                {/* IMAGE SECTION */}
-                <motion.div
-                    initial={{ opacity: 0, x: 40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
-                    className="w-full lg:w-1/2 flex justify-center "
+                    CAREER REINVENTORS
+                </h1>
+                <p
+                    className="inline-block px-1 py-1  text-gray-500 font-bold text-base max-w-3xl"
                 >
-                    <img
-                        src="Aboutus/Dr.LoubnaErraji.jpg"
-                        alt='Dr. Loubna Erraji'
-                        width={150}
-                        height={150}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-auto rounded-lg"
-                    />
-                </motion.div>
-            </div>
+                    By Dr. Loubna Erraji is a transformative guide for
+                    professionals ready to break free from stagnation and take bold steps toward meaningful
+                    career change. Using her proven and proprietary AAA Method™ —Awareness,
+                    Alignment, and Advancement— this book offers practical strategies to help
+                    you get unstuck, build confidence, and unlock your full potential.
+                </p>
+            </motion.header>
+
+            {/* Hero image */}
+            <motion.figure
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.6 }}
+                className="w-full max-w-4xl mx-auto mt-12"
+            >
+                <img
+                    src="Aboutus/Book_Mockup_2.png"
+                    alt="Executive and career coaching for leaders"
+                    loading="lazy"
+                    className="w-full border border-gray-300 rounded-3xl object-cover h-[250px] sm:h-[400px] md:h-[500px]"
+                />
+            </motion.figure>
         </section>
     );
 }
